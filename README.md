@@ -25,7 +25,7 @@ $ composer require apichef/laravel-obfuscate
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelObfuscate\Obfuscatable;
+use ApiChef\Obfuscate\Obfuscatable;
 
 class Post extends Model
 {
