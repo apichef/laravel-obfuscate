@@ -9,34 +9,48 @@
 
 # Easy id obfuscation for Laravel
 
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-build/
-docs/
-config/
-src/
-tests/
-vendor/
-```
-
-
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require milroyfraser/laravel-obfuscate
+$ composer require apichef/laravel-obfuscate
 ```
 
 ## Usage
 
 ``` php
-$skeleton = new LaravelObfuscate();
-echo $skeleton->echoPhrase('Hello, League!');
+// Model
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use LaravelObfuscate\Obfuscatable;
+
+class Post extends Model
+{
+    use Obfuscatable;
+
+    // ...
+}
+
+// Route Model Binding
+
+Route::get('/posts/{post}', function (Post $post) {
+    return [
+        'id' => $post->getRouteKey(),
+        'title' => $post->title,
+    ];
+})->name('post.show');
+
+// Generate the URL to a named route.
+
+$post = Post::find(1);
+
+echo(route('post.show', $post));
+
+// https://my-app.test/api/posts/458047115
+
 ```
 
 ## Change log
@@ -66,17 +80,17 @@ If you discover any security related issues, please email milroy@outlook.com ins
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/milroyfraser/laravel-obfuscate.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/apichef/laravel-obfuscate.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/milroyfraser/laravel-obfuscate/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/milroyfraser/laravel-obfuscate.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/milroyfraser/laravel-obfuscate.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/milroyfraser/laravel-obfuscate.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/apichef/laravel-obfuscate/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/apichef/laravel-obfuscate.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/apichef/laravel-obfuscate.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/apichef/laravel-obfuscate.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/milroyfraser/laravel-obfuscate
-[link-travis]: https://travis-ci.org/milroyfraser/laravel-obfuscate
-[link-scrutinizer]: https://scrutinizer-ci.com/g/milroyfraser/laravel-obfuscate/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/milroyfraser/laravel-obfuscate
-[link-downloads]: https://packagist.org/packages/milroyfraser/laravel-obfuscate
+[link-packagist]: https://packagist.org/packages/apichef/laravel-obfuscate
+[link-travis]: https://travis-ci.org/apichef/laravel-obfuscate
+[link-scrutinizer]: https://scrutinizer-ci.com/g/apichef/laravel-obfuscate/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/apichef/laravel-obfuscate
+[link-downloads]: https://packagist.org/packages/apichef/laravel-obfuscate
 [link-author]: https://github.com/milroyfraser
 [link-contributors]: ../../contributors
