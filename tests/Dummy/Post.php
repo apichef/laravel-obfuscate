@@ -2,8 +2,8 @@
 
 namespace ApiChef\Obfuscate\Dummy;
 
-use Illuminate\Database\Eloquent\Model;
 use ApiChef\Obfuscate\Obfuscatable;
+use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {

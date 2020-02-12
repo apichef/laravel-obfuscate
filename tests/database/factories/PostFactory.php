@@ -1,7 +1,7 @@
 <?php
 
-use Faker\Generator as Faker;
 use ApiChef\Obfuscate\Dummy\Post;
+use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
