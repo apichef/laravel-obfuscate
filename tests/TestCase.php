@@ -2,9 +2,9 @@
 
 namespace ApiChef\Obfuscate;
 
+use ApiChef\Obfuscate\Dummy\Post;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Support\Facades\Route;
-use ApiChef\Obfuscate\Dummy\Post;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
