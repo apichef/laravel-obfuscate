@@ -19,7 +19,9 @@ $ composer require apichef/laravel-obfuscate
 
 ## Usage
 
-``` php
+### Route Model Binding
+
+```php
 // Model
 
 namespace App;
@@ -34,7 +36,7 @@ class Post extends Model
     // ...
 }
 
-// Route Model Binding
+// Route
 
 Route::get('/posts/{post}', function (Post $post) {
     return [
@@ -51,6 +53,29 @@ echo(route('post.show', $post));
 
 // https://my-app.test/api/posts/458047115
 
+```
+
+### Validation
+
+```php
+namespace App\Http\Requests;
+
+use ApiChef\Obfuscate\Rules\HashExists;
+use Illuminate\Foundation\Http\FormRequest;
+
+class PostStoreRequest extends FormRequest
+{
+    // ...
+    public function rules()
+    {
+        return [
+            'post_id' => [
+                'required',
+                new HashExists('posts', 'id')
+            ],
+        ];
+    }
+}
 ```
 
 ## Change log
