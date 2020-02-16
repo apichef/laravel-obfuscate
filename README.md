@@ -78,6 +78,24 @@ class PostStoreRequest extends FormRequest
 }
 ```
 
+### Facade
+
+```php
+use ApiChef\Obfuscate\Support\Facades\Obfuscate;
+
+$result = Obfuscate::encode(1);
+// 458047115
+
+$result = Obfuscate::encode([1, 2]);
+// [458047115, 2033899500]
+
+$result = Obfuscate::decode('458047115');
+// 1
+
+$result = Obfuscate::decode([458047115, 2033899500]);
+// [1, 2]
+```
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

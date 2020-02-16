@@ -25,6 +25,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
         ];
     }
 
+    protected function getPackageAliases($app)
+    {
+        return [
+            'Obfuscate' => \ApiChef\Obfuscate\Support\Facades\Obfuscate::class,
+        ];
+    }
+
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('database.default', 'testbench');
