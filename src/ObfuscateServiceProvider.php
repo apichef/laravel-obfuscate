@@ -28,5 +28,9 @@ class ObfuscateServiceProvider extends ServiceProvider
                 config('obfuscate.xor')
             );
         });
+
+        $this->app->bind('obfuscate', function ($app) {
+            return $app->make(Obfuscate::class);
+        });
     }
 }

@@ -49,7 +49,10 @@
         "laravel": {
             "providers": [
                 "ApiChef\\Obfuscate\\ObfuscateServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Obfuscate": "ApiChef\\Obfuscate\\Support\\Facades\\Obfuscate"
+            }
         }
     },
     "config": {
