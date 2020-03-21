@@ -8,10 +8,10 @@ use Jenssegers\Optimus\Optimus;
 
 trait Obfuscatable
 {
-    public function resolveRouteBinding($value)
+    public function resolveRouteBinding($value, $field = null)
     {
         $value = App::make(Optimus::class)->decode($value);
-        $model = $this->where($this->getRouteKeyName(), $value)->first();
+        $model = $this->where($field ?? $this->getRouteKeyName(), $value)->first();
 
         if (! is_null($model)) {
             return $model;
