@@ -9,7 +9,7 @@ use Jenssegers\Optimus\Optimus;
 
 class HashExists implements Rule
 {
-    /** @var Optimus $optimus */
+    /** @var Optimus */
     private $optimus;
 
     /** @var string */

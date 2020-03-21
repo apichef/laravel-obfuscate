@@ -6,7 +6,7 @@ use Jenssegers\Optimus\Optimus;
 
 class Obfuscate
 {
-    /** @var Optimus $optimus */
+    /** @var Optimus */
     private $optimus;
 
     public function __construct(Optimus $optimus)
