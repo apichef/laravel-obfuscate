@@ -26,4 +26,9 @@ trait Obfuscatable
 
         return App::make(Optimus::class)->encode($value);
     }
+
+    public function scopeForHash($query, $hash)
+    {
+        return $query->where('id', App::make(Optimus::class)->decode($hash));
+    }
 }

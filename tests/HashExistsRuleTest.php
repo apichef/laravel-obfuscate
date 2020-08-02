@@ -41,4 +41,17 @@ class HashExistsRuleTest extends TestCase
 
         $this->assertNotEmpty($validatedData);
     }
+
+    public function test_it_takes_id_as_default_column_name()
+    {
+        /** @var Post $post */
+        $post = factory(Post::class)->create();
+
+        $request = Request::create('/', 'GET', ['post' => $post->getRouteKey()]);
+        $validatedData = $request->validate([
+            'post' => new HashExists('posts'),
+        ]);
+
+        $this->assertNotEmpty($validatedData);
+    }
 }

@@ -28,4 +28,13 @@ class ObfuscateTest extends TestCase
                 'id' => $post->id,
             ]);
     }
+
+    public function test_scopeForHash()
+    {
+        /** @var Post $post */
+        $post = factory(Post::class)->create();
+        $found = Post::forHash($post->getRouteKey())->first();
+
+        $this->assertEquals($post->id, $found->id);
+    }
 }

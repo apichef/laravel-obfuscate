@@ -18,7 +18,7 @@ class HashExists implements Rule
     /** @var string */
     private $column;
 
-    public function __construct(string $table, string $column)
+    public function __construct(string $table, string $column = 'id')
     {
         $this->optimus = App::make(Optimus::class);
         $this->table = $table;
