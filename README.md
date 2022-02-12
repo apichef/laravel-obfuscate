@@ -17,6 +17,14 @@ Via Composer
 $ composer require apichef/laravel-obfuscate
 ```
 
+| Laravel | Minimum Versions |
+|---------|:----------------:|
+| 5.x     |     `^1.0.0`     |
+| 6.x     |     `^1.0.0`     |
+| 7.x     |     `^2.0.0`     |
+| 8.x     |     `^2.0.0`     |
+| 9.x     |     `^3.0.0`     |
+
 ## Usage
 
 ### Route Model Binding
