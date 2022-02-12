@@ -1,11 +1,19 @@
 <?php
 
-use ApiChef\Obfuscate\Dummy\Post;
-use Faker\Generator as Faker;
+namespace Database\Factories;
 
-$factory->define(Post::class, function (Faker $faker) {
-    return [
-        'title' => $faker->sentence,
-        'body' => $faker->paragraph,
-    ];
-});
+use ApiChef\Obfuscate\Dummy\Post;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class PostFactory extends Factory
+{
+    protected $model = Post::class;
+
+    public function definition()
+    {
+        return [
+            'title' => $this->faker->sentence,
+            'body' => $this->faker->paragraph,
+        ];
+    }
+}
