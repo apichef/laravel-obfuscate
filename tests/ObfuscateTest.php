@@ -11,7 +11,7 @@ class ObfuscateTest extends TestCase
     public function test_it_generates_the_url_with_encrypted_id()
     {
         /** @var Post $post */
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
         $path = parse_url(route('post.show', $post), PHP_URL_PATH);
         $encryptedId = explode('/', $path);
 
@@ -21,7 +21,7 @@ class ObfuscateTest extends TestCase
     public function test_binding_works()
     {
         /** @var Post $post */
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $this->get(route('post.show', $post))
             ->assertJsonFragment([
@@ -32,7 +32,7 @@ class ObfuscateTest extends TestCase
     public function test_scopeForHash()
     {
         /** @var Post $post */
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
         $found = Post::forHash($post->getRouteKey())->first();
 
         $this->assertEquals($post->id, $found->id);

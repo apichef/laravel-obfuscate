@@ -32,7 +32,7 @@ class HashExistsRuleTest extends TestCase
     public function test_it_passes_when_the_id_exists()
     {
         /** @var Post $post */
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $request = Request::create('/', 'GET', ['post' => $post->getRouteKey()]);
         $validatedData = $request->validate([
@@ -45,7 +45,7 @@ class HashExistsRuleTest extends TestCase
     public function test_it_takes_id_as_default_column_name()
     {
         /** @var Post $post */
-        $post = factory(Post::class)->create();
+        $post = Post::factory()->create();
 
         $request = Request::create('/', 'GET', ['post' => $post->getRouteKey()]);
         $validatedData = $request->validate([
