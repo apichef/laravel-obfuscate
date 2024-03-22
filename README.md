@@ -1,10 +1,7 @@
-# laravel-obfuscate
+ # laravel-obfuscate
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-ci]][link-ci]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 # Easy id obfuscation for Laravel
@@ -140,8 +137,6 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [link-packagist]: https://packagist.org/packages/apichef/laravel-obfuscate
 [link-ci]: https://github.com/apichef/laravel-obfuscate/actions
-[link-scrutinizer]: https://scrutinizer-ci.com/g/apichef/laravel-obfuscate/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/apichef/laravel-obfuscate
 [link-downloads]: https://packagist.org/packages/apichef/laravel-obfuscate
 [link-author]: https://github.com/milroyfraser
 [link-contributors]: ../../contributors
