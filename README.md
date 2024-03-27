@@ -23,6 +23,8 @@ $ composer require apichef/laravel-obfuscate
 | 7.x     |     `^2.0.0`     |
 | 8.x     |     `^2.0.0`     |
 | 9.x     |     `^3.0.0`     |
+| 10.x    |     `^4.0.0`     |
+| 11.x    |     `^4.0.0`     |
 
 ## Usage
 
@@ -123,6 +125,7 @@ If you discover any security related issues, please email milroy@outlook.com ins
 
 ## Credits
 
+- [Nimna Awantha][link-maintainer]
 - [Milroy E. Fraser][link-author]
 - [All Contributors][link-contributors]
 
@@ -142,4 +145,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-code-quality]: https://scrutinizer-ci.com/g/apichef/laravel-obfuscate
 [link-downloads]: https://packagist.org/packages/apichef/laravel-obfuscate
 [link-author]: https://github.com/milroyfraser
+[link-maintainer]: https://github.com/nimnaherath
 [link-contributors]: ../../contributors
